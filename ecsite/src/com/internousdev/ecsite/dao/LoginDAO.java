@@ -12,31 +12,30 @@ public class LoginDAO {
 	private Connection connection = dbConnector.getConnection();
 	private LoginDTO loginDTO = new LoginDTO();
 
-	public LoginDTO getLoginUserInfo(String loginUserId,String loginPassword){
-		String sql="SELECT*FROM login_user_transaction where login_id=? AND login_pass=?";
-		try{
+	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword) {
+
+		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
+		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-			preparedStatement.setString(1,loginUserId);
-			preparedStatement.setString(2,loginPassword);
-
-			ResultSet resultSet= preparedStatement.executeQuery();
-
-			if(resultSet.next()){
+			preparedStatement.setString(1, loginUserId);
+			preparedStatement.setString(2, loginPassword);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()) {
 				loginDTO.setLoginId(resultSet.getString("login_id"));
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
-
-				if(!(resultSet.getString("login_id").equals(null))){
+				if(!(resultSet.getString("login_id").equals(null))) {
 					loginDTO.setLoginFlg(true);
 				}
+				loginDTO.setAdminFlg(resultSet.getString("admin_flg"));
 			}
-		}catch(Exception e){
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		return loginDTO;
 	}
-	public LoginDTO getLoginDTO(){
+	public LoginDTO getLoginDTO() {
 		return loginDTO;
+
 	}
 }

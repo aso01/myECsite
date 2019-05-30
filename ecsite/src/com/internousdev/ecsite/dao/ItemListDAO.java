@@ -9,21 +9,18 @@ import java.util.List;
 
 import com.internousdev.ecsite.dto.ItemInfoDTO;
 import com.internousdev.ecsite.util.DBConnector;
-
 public class ItemListDAO {
 
 	private DBConnector dbConnector = new DBConnector();
-	private Connection connection= dbConnector.getConnection();
-
-	public List<ItemInfoDTO> getItemList() throws SQLException{
+	private Connection connection = dbConnector.getConnection();
+	public List<ItemInfoDTO> getItemList () throws SQLException {
 		List<ItemInfoDTO> itemInfoDTOList = new ArrayList<ItemInfoDTO>();
-		String sql ="SELECT*FROM item_info_transaction ORDER BY id";
+		String sql ="SELECT * FROM item_info_transaction ORDER BY id";
+		try {
 
-		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
-
-			while(resultSet.next()){
+			while(resultSet.next()) {
 				ItemInfoDTO dto = new ItemInfoDTO();
 				dto.setId(resultSet.getString("id"));
 				dto.setItemName(resultSet.getString("item_name"));
@@ -33,11 +30,12 @@ public class ItemListDAO {
 				dto.setUpdate_date(resultSet.getString("update_date"));
 				itemInfoDTOList.add(dto);
 			}
-		}catch(Exception e){
+		} catch(Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			connection.close();
 		}
 		return itemInfoDTOList;
 	}
 }
+

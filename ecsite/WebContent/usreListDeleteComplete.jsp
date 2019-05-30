@@ -60,12 +60,12 @@ table {
 		</div>
 		<div>
 			<p><s:property value="message"/></p>
-			<div>
-				<p><a href='<s:url action="AdminAction" />'>管理者TOP画面へ戻る</a></p>
-			</div>
+		<div>
+			<p><a href='<s:url action="AdminAction" />'>管理者TOP画面へ戻る</a></p>
 		</div>
-	</div>
-	<div id="footer">
-	</div>
+		</div>
+		</div>
+		<div id="footer">
+		</div>
 	</body>
 </html>

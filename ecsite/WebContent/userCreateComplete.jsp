@@ -9,7 +9,6 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <title>UserCreateComplete画面</title>
-
 <style type="text/css">
 /*=======TAG LAYOUT======*/
 body{
@@ -61,7 +60,16 @@ table{
 		<div>
 			<h3>ユーザーの登録が完了致しました。</h3>
 			<div>
-				<a href='<s:url action="HomeAction"/>'>ログインへ</a>
+				<s:if test="#session.containsKey('loginUser') && #session.loginUser.adminFlg == 1" >
+					<div>
+						<a href='<s:url action="AdminAction" />'>管理者TOPへ</a>
+					</div>
+				</s:if>
+				<s:else>
+					<div>
+						<a href='<s:url action="HomeAction" />'>ログインへ</a>
+					</div>
+				</s:else>
 			</div>
 		</div>
 	</div>

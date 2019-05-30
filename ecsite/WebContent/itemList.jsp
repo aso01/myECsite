@@ -88,13 +88,13 @@ table{
 				<td><s:property value="insert_date"/></td>
 				<td><s:property value="update_date"/></td>
 			</tr>
-			<s:submit value="削除"/>
 			</s:iterator>
 			</table>
+			<s:form action="ItemListDeleteConfirmAction">
+			<s:submit value="削除"/>
+			</s:form>
 		</s:elseif>
-		<s:if test="message != null">
-			<h3><s:property value="message"/></h3>
-		</s:if>
+
 		<div id="text-right">
 			<span>管理者画面に戻る場合は</span>
 			<a href='<s:url action="AdminAction"/>'>こちら</a>

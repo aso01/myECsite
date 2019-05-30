@@ -58,8 +58,6 @@ table{
 </head>
 <body>
 	<div id="header">
-		<div id="pr">
-		</div>
 	</div>
 	<div id="main">
 		<div id="top">
@@ -71,13 +69,11 @@ table{
 			</s:form>
 			<s:if test="#session.id !=null">
 				<p>ログアウトする場合は
-					<a href='<s:url action="LoginAction"/>'>こちら</a></p>
+					<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</s:if>
 		</div>
 	</div>
 	<div id="footer">
-		<div id="pr">
-		</div>
 	</div>
 </body>
 </html>

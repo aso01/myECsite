@@ -90,7 +90,6 @@ body{
 		<div id="top">
 			<p>管理者画面</p>
 		</div>
-
 		<div class = main_container>
 		<s:form>
 			<div class = content_left>
@@ -109,6 +108,9 @@ body{
 			</div>
 			</s:form>
 		</div>
+	</div>
+	<div id="text-right">
+		<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 	</div>
 	<div id="footer">
 	</div>

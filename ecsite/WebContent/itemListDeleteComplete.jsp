@@ -10,7 +10,6 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <title>商品削除完了画面</title>
-
 <style type="text/css">
 /* ========TAG LAYOUT======== */
 body {
@@ -23,11 +22,6 @@ body {
 	color:#333;
 	background:#fff;
 }
-table {
-	text-align:center;
-	margin:0 auto;
-}
-
 /* ========ID LAYOUT======== */
 #top {
 	width:780px;
@@ -60,7 +54,7 @@ table {
 			<p>商品削除完了</p>
 		</div>
 		<div>
-			<p><s:property value="message"/></p>
+			<h3><s:property value="message"/></h3>
 			<div>
 				<p><a href='<s:url action="AdminAction" />'>管理者TOP画面へ戻る</a></p>
 			</div>
