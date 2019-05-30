@@ -61,8 +61,6 @@ table{
 </head>
 <body>
 	<div id="header">
-		<div id="pr">
-		</div>
 	</div>
 	<div id="main">
 		<div id="top">
@@ -101,8 +99,6 @@ table{
 		</div>
 	</div>
 	<div id="footer">
-		<div id="pr">
-		</div>
 	</div>
 </body>
 </html>
